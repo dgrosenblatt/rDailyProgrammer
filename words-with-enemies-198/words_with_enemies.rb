@@ -1,5 +1,3 @@
-require 'pry'
-
 class Game
   def initialize(args)
     @left = args[:left]
@@ -31,18 +29,4 @@ class Game
     puts "Left: #{left_score}: #{left_chars.compact.join}."
     puts "Right: #{right_score}: #{right_chars.compact.join}."
   end
-
-
 end
-
-Game.new({ left: "because", right: "cause" })
-Game.new({ left: "hello", right: "below"})
-Game.new({ left: "hit", right: "miss"})
-Game.new({ left: "rekt", right: "pwn"})
-Game.new({ left: "combo", right: "jumbo"})
-Game.new({ left: "critical", right: "optical"})
-Game.new({ left: "isoenzyme", right: "apoenzyme"})
-Game.new({ left: "tribesman", right: "brainstem"})
-Game.new({ left: "blames", right: "nimble"})
-Game.new({ left: "yakuza", right: "wizard"})
-Game.new({ left: "longbow", right: "blowup"})
