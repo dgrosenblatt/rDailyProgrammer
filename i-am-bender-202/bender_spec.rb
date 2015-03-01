@@ -6,4 +6,9 @@ RSpec.describe "translate" do
     expect(translate("01001000")).to eq("H")
     expect(translate("0100100001100101011011000110110001101111001000000101011101101111011100100110110001100100")).to eq("Hello World")
   end
+
+  it "should translate a binary string to english in one line" do
+    expect(line_translate("01001000")).to eq("H")
+    expect(line_translate("0100100001100101011011000110110001101111001000000101011101101111011100100110110001100100")).to eq("Hello World")
+  end
 end

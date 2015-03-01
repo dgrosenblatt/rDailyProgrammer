@@ -5,3 +5,7 @@ def translate(binary)
   end
   characters.join
 end
+
+def line_translate(binary)
+  binary.scan(/\d{8}/).map{ |byte| byte.to_i(2).chr }.join
+end
