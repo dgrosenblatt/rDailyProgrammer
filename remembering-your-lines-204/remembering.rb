@@ -3,7 +3,6 @@ require 'pry'
 def remembering(phrase)
   macbeth_lines = File.open("macbeth.txt").readlines
 
-  match_line = ""
   match_index = -1
   macbeth_lines.each_with_index do |line, index|
     if line.include? phrase
@@ -11,8 +10,7 @@ def remembering(phrase)
     end
   end
 
-  quote_indexes = []
-  quote_indexes << match_index
+  quote_indexes = Array.new(1) { match_index }
 
   ahead = 1
   while macbeth_lines[match_index + ahead] != "\n"
