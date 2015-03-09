@@ -30,3 +30,7 @@ end
 puts remembering("Eye of newt")
 puts
 puts remembering("rugged Russian bear")
+puts
+puts remembering("break this enterprise")
+puts
+puts remembering("Yet who would have thought")
