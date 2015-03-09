@@ -1,36 +1,11 @@
-require 'pry'
+require_relative 'quote'
 
-def remembering(phrase)
-  macbeth_lines = File.open("macbeth.txt").readlines
+# "Eye of newt"
+# "rugged Russian bear"
+# "break this enterprise"
+# "Yet who would have thought"
 
-  match_index = -1
-  macbeth_lines.each_with_index do |line, index|
-    if line.include? phrase
-      match_index = index
-    end
-  end
-
-  quote_indexes = Array.new(1) { match_index }
-
-  ahead = 1
-  while macbeth_lines[match_index + ahead] != "\n"
-    quote_indexes << (match_index + ahead)
-    ahead += 1
-  end
-
-  back = 1
-  while macbeth_lines[match_index - back][2] == " "
-    quote_indexes.insert(0,(match_index - back))
-    back += 1
-  end
-
-  macbeth_lines[quote_indexes.first..quote_indexes.last].join
-end
-
-puts remembering("Eye of newt")
-puts
-puts remembering("rugged Russian bear")
-puts
-puts remembering("break this enterprise")
-puts
-puts remembering("Yet who would have thought")
+macbeth = File.open("macbeth.txt")
+newt = Quote.new("Eye of newt", macbeth)
+macbeth.close
+puts newt.passage_text
