@@ -1,5 +1,5 @@
 require_relative 'quote'
-
+require 'pry'
 # "Eye of newt"
 # "rugged Russian bear"
 # "break this enterprise"

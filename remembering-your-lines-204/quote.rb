@@ -10,7 +10,23 @@ class Quote
     end
   end
 
+  def act
+    @book[0...line_num].reverse.each {|line| return line.chop.chop if line.include? "ACT"}
+  end
+
+  def scene
+    @book[0...line_num].reverse.each {|line| return line[0..6] if line.include? "SCENE"}
+  end
+
+  def characters_in_scene
+  end
+
+  def speaker
+    @book[passage_start-1][2..-3]
+  end
+
   def passage_text
+    binding.pry
     @book[passage_start..passage_end].join
   end
 
