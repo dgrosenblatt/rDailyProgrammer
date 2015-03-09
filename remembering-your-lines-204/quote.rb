@@ -19,6 +19,7 @@ class Quote
   end
 
   def characters_in_scene
+    [speaker, "SHAKESPEARE"]
   end
 
   def speaker
@@ -26,8 +27,17 @@ class Quote
   end
 
   def passage_text
-    binding.pry
     @book[passage_start..passage_end].join
+  end
+
+  def passage_with_info
+    """
+    #{act}
+    #{scene}
+    Characters in scene: #{characters_in_scene.join(', ')}
+    Spoken by #{speaker}:
+    #{passage_text}
+    """
   end
 
   private

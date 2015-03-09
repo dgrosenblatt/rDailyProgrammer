@@ -8,4 +8,4 @@ require 'pry'
 macbeth = File.open("macbeth.txt")
 newt = Quote.new("Eye of newt", macbeth)
 macbeth.close
-puts newt.passage_text
+puts newt.passage_with_info
