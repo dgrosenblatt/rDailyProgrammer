@@ -12,7 +12,6 @@ def to_hyper(dec)
   max_power = 0
   loop do
     if (2**max_power) > dec
-      max_power -= 1
       break
     else
       max_power += 1
@@ -45,4 +44,4 @@ end
 # puts
 # puts to_hyper(9)
 # puts to_hyper(4)
-puts to_hyper(18)
+puts to_hyper(73)
