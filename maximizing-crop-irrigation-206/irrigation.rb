@@ -1,10 +1,8 @@
-require 'pry'
-
 h = 51
 w = 91
 r = 9
 
-crops =
+field =
 """\
 ......x...x....x............x............x.................................x...............
 .........x...........x...................x.....x...........xx.............x................
@@ -83,23 +81,14 @@ def reach(square, map, radius)
   crops
 end
 
-crops_grid = crops.split("\n").map { |row| row.split("") }
-
+crops_grid = field.split("\n").map { |row| row.split("") }
 watered = Hash.new(0)
 
-start = Time.now
 crops_grid.each_with_index do |row, row_index|
   row.each_with_index do |square, col_index|
     watered[[row_index,col_index]] = reach([row_index,col_index], crops_grid, r)
   end
 end
 
-max = watered.values.max
-puts watered.select{ |k,v| v == max }
-
-finish = Time.now
-timer = finish-start
-
-
-
-binding.pry
+max_crops = watered.values.max
+puts watered.select{ |k,v| v == max_crops }
