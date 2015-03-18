@@ -1,4 +1,4 @@
-require 'pry'
+require 'benchmark'
 
 def to_dec(hyper)
   sum = 0
@@ -39,9 +39,5 @@ def to_hyper(dec)
   solutions
 end
 
-
-# puts to_dec("1021")
-# puts
-# puts to_hyper(9)
-# puts to_hyper(4)
-puts to_hyper(73)
+puts Benchmark.measure { puts to_hyper(18) }
+puts Benchmark.measure { puts to_hyper(73) }
